@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC Online Examination Application</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <span>Republic of the Philippines — Official Government Website</span>
+        <span id="phTime">Philippine Standard Time: Loading...</span>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-brand">
+
+            <div class="csc-logo-box">
+                <img src="images/csclogo.png" alt="CSC Logo">
+            </div>
+
+            <div class="brand-text">
+                <h1>Civil Service Commission</h1>
+                <p>Republic of the Philippines • Gawing Lingkod Bayani ang Bawat Kawani</p>
+            </div>
+
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Programs</a>
+            <a href="#">Career</a>
+            <a href="#" class="active">Examinations</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-badge">
+            <b>Online Examination Portal</b>
+        </div>
+
+        <h2>
+            Apply for the
+            <span><b>Civil Service Examination</b></span>
+            Online
+        </h2>
+
+        <p>
+            Submit your application, track your exam schedule,
+            and access your results — all in one place.
+        </p>
+
+        <div class="cards-row">
+
+            <div class="card">
+                <div class="card-icon navy">
+                    <img src="images/usericon.svg" alt="Sign In Icon">
+                </div>
+                <h3>Sign In Account</h3>
+
+                <p>
+                    Check your exam schedule,
+                    update your profile,
+                    and view your past results.
+                </p>
+
+                <button class="card-btn primary">
+                    Sign In
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon blue">📄</div>
+
+                <h3>Apply for Exam</h3>
+
+                <p>
+                    Fill out the application form,
+                    create your account,
+                    and receive your application number.
+                </p>
+
+                <button class="card-btn gold"
+                        onclick="window.location.href='applicant/examdetails.html'">
+                    Apply Now
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon red">🔒</div>
+
+                <h3>Admin Login</h3>
+
+                <p>
+                    Manage applicant records,
+                    review applications,
+                    and administer exam schedules.
+                </p>
+
+                <button class="card-btn outline">
+                    Log In
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

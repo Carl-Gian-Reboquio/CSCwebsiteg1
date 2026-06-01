@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education & Employment Information</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+body{
+    background:#f4f6f9;
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:40px 20px;
+}
+
+.form-container{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+h2{
+    color:#0038A8;
+    margin-bottom:30px;
+}
+
+h3{
+    margin-top:35px;
+    color:#0038A8;
+    border-bottom:2px solid #eee;
+    padding-bottom:8px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.radio-group{
+    display:flex;
+    gap:20px;
+}
+
+.button-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:40px;
+}
+
+.btn{
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    font-size:15px;
+}
+
+.btn-back{
+    background:#6c757d;
+}
+
+.btn-next{
+    background:#0038A8;
+}
+
+.btn-add{
+    background:#198754;
+    margin-top:15px;
+}
+
+.hidden{
+    display:none;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+table th{
+    background:#0038A8;
+    color:white;
+}
+
+table input{
+    width:100%;
+    padding:8px;
+}
+
+.remove-btn{
+    background:#CE1126;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<form class="form-container" id="educWorkForm">
+
+<h2>Education & Employment Information</h2>
+
+<h3>Educational Background</h3>
+
+<div class="form-group">
+    <label>Highest Educational Attainment</label>
+    <select id="educationLevel" required>
+        <option value="">Select</option>
+        <option>High School</option>
+        <option>Technical / Vocational</option>
+        <option>College</option>
+        <option>Postgraduate</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Completion Status</label>
+
+    <div class="radio-group">
+
+        <label>
+            <input type="radio"
+                   name="completion"
+                   id="graduated"
+                   checked>
+            Graduated
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="completion"
+                   id="notGraduated">
+            Not Graduated
+        </label>
+
+    </div>
+</div>
+
+<div id="graduatedSection">
+
+    <div class="form-group">
+        <label>Graduation Date</label>
+        <input type="date" id="graduationDate">
+    </div>
+
+    <div class="form-group">
+        <label>Honors Received</label>
+        <input type="text" id="honorsReceived">
+    </div>
+
+</div>
+
+<div id="notGraduatedSection" class="hidden">
+
+    <div class="form-group">
+        <label>Highest Year / Level / Units Earned</label>
+        <input type="text" id="highestUnits">
+    </div>
+
+</div>
+
+<div class="form-group">
+    <label>Course / Degree</label>
+    <input type="text" id="courseDegree">
+</div>
+
+<div class="form-group">
+    <label>Major</label>
+    <input type="text" id="major">
+</div>
+
+<div class="form-group">
+    <label>Name of School</label>
+    <input type="text" id="schoolName">
+</div>
+
+<div class="form-group">
+    <label>School Address</label>
+    <textarea rows="3" id="schoolAddress"></textarea>
+</div>
+
+<div class="form-row">
+
+    <div class="form-group">
+        <label>Inclusive Year From</label>
+        <input type="number" id="yearFrom">
+    </div>
+
+    <div class="form-group">
+        <label>Inclusive Year To</label>
+        <input type="number" id="yearTo">
+    </div>
+
+</div>
+
+<h3>Present Employment</h3>
+
+<div class="form-group">
+    <label>Employment Sector</label>
+
+    <select id="employmentSector">
+
+        <option>Government</option>
+        <option>Private</option>
+        <option>NGO</option>
+        <option>Self-employed</option>
+        <option>Unemployed</option>
+
+    </select>
+</div>
+
+<div id="employmentFields">
+
+    <div class="form-group">
+        <label>Agency / Office</label>
+        <input type="text" id="agencyOffice">
+    </div>
+
+    <div class="form-group">
+        <label>Address</label>
+        <textarea rows="3" id="employmentAddress"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Position / Job Title</label>
+        <input type="text" id="jobTitle">
+    </div>
+
+    <div class="form-group">
+        <label>No. of Years in Position</label>
+        <input type="number" id="yearsInPosition">
+    </div>
+
+    <div class="form-group">
+        <label>Status of Appointment / Employment</label>
+
+        <select id="employmentStatus">
+            <option>Permanent</option>
+            <option>Temporary</option>
+            <option>Contractual</option>
+            <option>Casual</option>
+            <option>Job Order</option>
+            <option>Coterminous</option>
+        </select>
+    </div>
+
+</div>
+
+<h3>Government Examinations Passed / Civil Service Eligibility</h3>
+
+<table id="examTable">
+
+<thead>
+<tr>
+    <th>Title of Examination</th>
+    <th>Rating Obtained</th>
+    <th>Date Granted</th>
+    <th>Place of Examination</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="date"></td>
+<td><input type="text"></td>
+
+<td>
+<button type="button"
+        class="remove-btn"
+        onclick="removeRow(this)">
+Remove
+</button>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<button type="button"
+        class="btn btn-add"
+        onclick="addExamRow()">
++ Add Examination
+</button>
+
+<div class="button-row">
+
+<button
+type="button"
+class="btn btn-back"
+onclick="window.location.href='personalinfo.html'">
+Back
+</button>
+
+<button
+type="submit"
+class="btn btn-next">
+Next
+</button>
+
+</div>
+
+</form>
+
+<script>
+
+const graduated =
+document.getElementById("graduated");
+
+const notGraduated =
+document.getElementById("notGraduated");
+
+const graduatedSection =
+document.getElementById("graduatedSection");
+
+const notGraduatedSection =
+document.getElementById("notGraduatedSection");
+
+graduated.addEventListener("change",()=>{
+
+    graduatedSection.classList.remove("hidden");
+    notGraduatedSection.classList.add("hidden");
+
+});
+
+notGraduated.addEventListener("change",()=>{
+
+    graduatedSection.classList.add("hidden");
+    notGraduatedSection.classList.remove("hidden");
+
+});
+
+const employmentSector =
+document.getElementById("employmentSector");
+
+const employmentFields =
+document.getElementById("employmentFields");
+
+employmentSector.addEventListener("change",()=>{
+
+    if(employmentSector.value==="Unemployed"){
+        employmentFields.style.display="none";
+    }
+    else{
+        employmentFields.style.display="block";
+    }
+
+});
+
+function addExamRow(){
+
+    const table =
+    document.querySelector("#examTable tbody");
+
+    const row =
+    document.createElement("tr");
+
+    row.innerHTML = `
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="date"></td>
+        <td><input type="text"></td>
+        <td>
+            <button type="button"
+                    class="remove-btn"
+                    onclick="removeRow(this)">
+                Remove
+            </button>
+        </td>
+    `;
+
+    table.appendChild(row);
+}
+
+function removeRow(button){
+
+    const rows =
+        document.querySelectorAll("#examTable tbody tr");
+
+    if(rows.length === 1){
+        alert("At least one examination row must remain.");
+        return;
+    }
+
+    button.parentElement.parentElement.remove();
+
+}
+
+document
+.getElementById("educWorkForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    localStorage.setItem(
+        "education_level",
+        document.getElementById("educationLevel").value
+    );
+
+    localStorage.setItem(
+        "completion_status",
+        graduated.checked
+            ? "Graduated"
+            : "Not Graduated"
+    );
+
+    localStorage.setItem(
+        "graduation_date",
+        document.getElementById("graduationDate").value
+    );
+
+    localStorage.setItem(
+        "honors_received",
+        document.getElementById("honorsReceived").value
+    );
+
+    localStorage.setItem(
+        "highest_units",
+        document.getElementById("highestUnits").value
+    );
+
+    localStorage.setItem(
+        "course_degree",
+        document.getElementById("courseDegree").value
+    );
+
+    localStorage.setItem(
+        "major",
+        document.getElementById("major").value
+    );
+
+    localStorage.setItem(
+        "school_name",
+        document.getElementById("schoolName").value
+    );
+
+    localStorage.setItem(
+        "school_address",
+        document.getElementById("schoolAddress").value
+    );
+
+    localStorage.setItem(
+        "year_from",
+        document.getElementById("yearFrom").value
+    );
+
+    localStorage.setItem(
+        "year_to",
+        document.getElementById("yearTo").value
+    );
+
+    localStorage.setItem(
+        "employment_sector",
+        document.getElementById("employmentSector").value
+    );
+
+    localStorage.setItem(
+        "agency_office",
+        document.getElementById("agencyOffice").value
+    );
+
+    localStorage.setItem(
+        "employment_address",
+        document.getElementById("employmentAddress").value
+    );
+
+    localStorage.setItem(
+        "job_title",
+        document.getElementById("jobTitle").value
+    );
+
+    localStorage.setItem(
+        "years_in_position",
+        document.getElementById("yearsInPosition").value
+    );
+
+    localStorage.setItem(
+        "employment_status",
+        document.getElementById("employmentStatus").value
+    );
+
+    const exams = [];
+
+    document
+        .querySelectorAll("#examTable tbody tr")
+        .forEach(row => {
+
+            const inputs =
+                row.querySelectorAll("input");
+
+            exams.push({
+                title: inputs[0].value,
+                rating: inputs[1].value,
+                dateGranted: inputs[2].value,
+                place: inputs[3].value
+            });
+
+        });
+
+    localStorage.setItem(
+        "passed_exams",
+        JSON.stringify(exams)
+    );
+
+    window.location.href = "review.html";
+
+});
+
+</script>
+
+</body>
+</html>
