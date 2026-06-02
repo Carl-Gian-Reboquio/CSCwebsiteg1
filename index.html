@@ -4,43 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSC Online Examination Application</title>
-
+    <link rel="icon" href="images/csclogo.png">
     <link rel="stylesheet" href="css/style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <span>Republic of the Philippines — Official Government Website</span>
-        <span id="phTime">Philippine Standard Time: Loading...</span>
-    </div>
-
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="nav-brand">
-
-            <div class="csc-logo-box">
-                <img src="images/csclogo.png" alt="CSC Logo">
+    <!-- Top Bar -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1 class="header-title">Civil Service Examination</h1>
+                    <p class="header-subtitle">Online Application Portal</p>
+                </div>
+                <button class="btn-sign-in">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span class="hide-mobile">Sign In</span>
+                </button>
             </div>
-
-            <div class="brand-text">
-                <h1>Civil Service Commission</h1>
-                <p>Republic of the Philippines • Gawing Lingkod Bayani ang Bawat Kawani</p>
-            </div>
-
         </div>
-
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Programs</a>
-            <a href="#">Career</a>
-            <a href="#" class="active">Examinations</a>
-            <a href="#">Contact Us</a>
-        </div>
-    </nav>
+    </header>
 
     <!-- HERO -->
     <section class="hero">

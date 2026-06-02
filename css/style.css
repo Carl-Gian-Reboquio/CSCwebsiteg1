@@ -5,6 +5,20 @@
     --gray:#6B7280;
     --off-white:#F4F4F4;
     --navy:#333333;
+
+    --color-background: #ffffff;
+    --color-foreground: #0f172a;
+    --color-primary: #1e40af;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #f8fafc;
+    --color-secondary-foreground: #0f172a;
+    --color-muted: #f8fafc;
+    --color-muted-foreground: #64748b;
+    --color-accent: #3b82f6;
+    --color-destructive: #dc2626;
+    --color-destructive-foreground: #ffffff;
+    --color-border: #e2e8f0;
+    --color-success: #059669;
 }
 
 *{
@@ -13,48 +27,66 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:'DM Sans',sans-serif;
-    background:var(--off-white);
+body {
+    font-family: 'Inter', sans-serif;
 }
 
-/* TOP BAR */
-
-.topbar{
-    background:#4a4a4a;
-    color:white;
-    padding:8px 40px;
-    display:flex;
-    justify-content:space-between;
-    font-size:12px;
+h1, h2, h3 {
+    font-family: 'Libre Baskerville', serif;
 }
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 
 /* NAVBAR */
 
-nav{
-    background:white;
-    padding:16px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:3px solid var(--red);
+.header {
+    background-color: var(--color-background);
+    border-bottom: red 2px solid;
 }
 
-.nav-brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.csc-logo-box {
+.header-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
 }
 
-.csc-logo-box img {
-    height: 70px;
-    width: auto;
+.header-title {
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.header-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+}
+
+.btn-sign-in {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    background: none;
+    transition: color 0.2s;
+    border: none;
+}
+
+.btn-sign-in:hover {
+    color: var(--color-accent);
+}
+
+.hide-mobile {
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-sign-in .icon {
+    width: 20px;
+    height: 20px;
 }
 
 .logo-flag{
@@ -83,29 +115,6 @@ nav{
 .logo-text-csc{
     color:#0038A8;
     font-weight:bold;
-}
-
-.brand-text h1{
-    font-size:16px;
-}
-
-.brand-text p{
-    font-size:10px;
-    color:gray;
-}
-
-.nav-links{
-    display:flex;
-    gap:12px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:#333;
-}
-
-.nav-links .active{
-    color:var(--red);
 }
 
 /* HERO */
@@ -169,7 +178,7 @@ nav{
     color:black;
     width:280px;
     padding:30px;
-    border-radius:16px;
+    border-radius:6px;
 }
 
 .card-icon{
