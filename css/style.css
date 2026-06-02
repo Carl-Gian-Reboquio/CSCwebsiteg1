@@ -35,7 +35,7 @@ h1, h2, h3 {
     font-family: 'Libre Baskerville', serif;
 }
 .container {
-    max-width: 1500px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -89,6 +89,18 @@ h1, h2, h3 {
     height: 20px;
 }
 
+.header-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
 .logo-flag{
     display:flex;
     gap:2px;
@@ -116,9 +128,25 @@ h1, h2, h3 {
     color:#0038A8;
     font-weight:bold;
 }
-
 /* HERO */
 
+.hero-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: white;
+    max-width: 48rem;
+    margin: 0 auto;
+
+}
 .hero {
     position: relative;
     overflow: hidden;
@@ -139,6 +167,7 @@ h1, h2, h3 {
     color:white;
     text-align:center;
     padding:80px 40px;
+    
 }
 
 .hero-badge{
