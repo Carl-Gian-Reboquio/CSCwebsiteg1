@@ -143,6 +143,36 @@
         </select>
     </div>
 
+    <div
+    class="form-group"
+    id="pregnantSection"
+    style="display:none;">
+
+    <label>Are you pregnant?</label>
+
+        <div class="radio-group">
+
+            <label>
+                <input
+                    type="radio"
+                    name="pregnant"
+                    value="Yes">
+                Yes
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="pregnant"
+                    value="No"
+                    checked>
+                No
+            </label>
+
+        </div>
+
+    </div>
+
     <div class="form-group">
         <label>Date of Birth</label>
         <input type="date" id="birthDate" required>
@@ -183,6 +213,11 @@
     <div class="form-group">
         <label>Mobile Number</label>
         <input type="tel" id="mobileNumber" required>
+    </div>
+
+    <div class="form-group">
+        <label>Telephone Number</label>
+        <input type="tel" id="telephoneNumber">
     </div>
 
     <h3>Permanent Address</h3>
@@ -239,11 +274,6 @@
             <input type="checkbox" class="pwd-checkbox" value="Speech Impairment">
             Speech Impairment
         </label>
-
-        
-
-
-
 
         <br><br>
 
@@ -305,7 +335,7 @@
         <button
             type="button"
             class="btn btn-back"
-            onclick="history.back()">
+            onclick="window.location.href='examdetails.html'">
             Back
         </button>
 
@@ -348,6 +378,27 @@ birthDate.addEventListener("change", () => {
     }
 
     age.value = years;
+});
+
+const sex = document.getElementById("sex");
+const pregnantSection = document.getElementById("pregnantSection");
+
+sex.addEventListener("change", () => {
+
+    if(sex.value === "Female"){
+
+        pregnantSection.style.display = "block";
+
+    }else{
+
+        pregnantSection.style.display = "none";
+
+        document.querySelector(
+            'input[name="pregnant"][value="No"]'
+        ).checked = true;
+
+    }
+
 });
 
 const pwdYes =
@@ -440,6 +491,22 @@ document
         document.getElementById("sex").value
     );
 
+    let pregnant = "No";
+
+    if(document.getElementById("sex").value === "Female"){
+
+        pregnant =
+            document.querySelector(
+                'input[name="pregnant"]:checked'
+            ).value;
+
+    }
+
+    localStorage.setItem(
+    "pregnant",
+    pregnant
+    );
+
     localStorage.setItem(
         "birth_date",
         document.getElementById("birthDate").value
@@ -468,6 +535,11 @@ document
     localStorage.setItem(
         "mobile_number",
         document.getElementById("mobileNumber").value
+    );
+
+    localStorage.setItem(
+        "telephone_number",
+        document.getElementById("telephoneNumber").value
     );
 
     localStorage.setItem(
