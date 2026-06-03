@@ -1,11 +1,8 @@
-:root{
-    --blue:#0038A8;
-    --red:#CE1126;
-    --white:#FFFFFF;
-    --gray:#6B7280;
-    --off-white:#F4F4F4;
-    --navy:#333333;
-
+/* ========================================
+   CSS VARIABLES / DESIGN TOKENS
+   ======================================== */
+:root {
+    /* Colors */
     --color-background: #ffffff;
     --color-foreground: #0f172a;
     --color-primary: #1e40af;
@@ -19,30 +16,93 @@
     --color-destructive-foreground: #ffffff;
     --color-border: #e2e8f0;
     --color-success: #059669;
+    
+    /* Typography */
+    --font-heading: 'Libre Baskerville', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --radius: 0.5rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-foreground);
+    background-color: var(--color-muted);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-heading);
 }
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+h3 {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+button {
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================================
+   LAYOUT CONTAINERS
+   ======================================== */
+
 .container {
-    max-width: 1700px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
+.container-narrow {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-/* NAVBAR */
-
+/* ========================================
+   HEADER
+   ======================================== */
 .header {
     background-color: var(--color-background);
     border-bottom: red 2px solid;
@@ -65,6 +125,17 @@ h1, h2, h3 {
     color: var(--color-muted-foreground);
 }
 
+.header-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    width: 60px;
+    height: 60px;
+}
+
 .btn-sign-in {
     display: flex;
     align-items: center;
@@ -73,15 +144,10 @@ h1, h2, h3 {
     color: var(--color-primary);
     background: none;
     transition: color 0.2s;
-    border: none;
 }
 
 .btn-sign-in:hover {
     color: var(--color-accent);
-}
-
-.hide-mobile {
-    font-family: 'Inter', sans-serif;
 }
 
 .btn-sign-in .icon {
@@ -89,52 +155,34 @@ h1, h2, h3 {
     height: 20px;
 }
 
-.header-with-logo {
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+.main-content {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    padding: 3rem 0;
+    background-image: linear-gradient(rgba(231, 231, 231, 0.85), rgba(196, 194, 194, 0.85)), url("../images/csc-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.header-logo {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-}
-
-.logo-flag{
-    display:flex;
-    gap:2px;
-}
-
-.flag-stripe{
-    width:8px;
-    height:10px;
-}
-
-.blue{
-    background:#0038A8;
-}
-
-.red{
-    background:#CE1126;
-}
-
-.white{
-    background:white;
-    border:1px solid #ddd;
-}
-
-.logo-text-csc{
-    color:#0038A8;
-    font-weight:bold;
-}
-/* HERO */
-
+/* ========================================
+   HERO SECTION
+   ======================================== */
 .hero-section {
     text-align: center;
     margin-bottom: 3rem;
 }
 
+.civil-hero {
+    color: #da0a0a;
+    font-weight: 500;
+}
 .hero-title {
     font-size: 1.875rem;
     margin-bottom: 1rem;
@@ -142,130 +190,169 @@ h1, h2, h3 {
 
 .hero-description {
     font-size: 1.125rem;
-    color: white;
+    color: var(--color-muted-foreground);
     max-width: 48rem;
     margin: 0 auto;
-
 }
-.hero {
-    position: relative;
-    overflow: hidden;
-    color: white;
-    padding: 80px 40px 100px;
 
-    background-image:
-        linear-gradient(
-            rgba(0,56,168,0.80),
-            rgba(0,56,168,0.80)
-        ),
-        url("../images/bg.png");
+/* ========================================
+   CARD GRID
+   ======================================== */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin: 0 auto 4rem;
+}
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.action-card {
+    background-color: var(--color-background);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+}
 
-    color:white;
-    text-align:center;
-    padding:80px 40px;
+.action-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card-disabled {
+    opacity: 0.75;
+}
+
+.card-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.bg-primary-light {
+    background-color: rgba(30, 64, 175, 0.1);
+}
+
+.bg-destructive-light {
+    background-color: rgba(220, 38, 38, 0.1);
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-destructive {
+    color: var(--color-destructive);
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.card-description {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.625rem 1rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+}
+
+.btn-primary:hover {
+    background-color: rgba(30, 64, 175, 0.9);
+}
+
+.btn-secondary {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-muted);
+}
+
+.btn-destructive-disabled {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: var(--color-destructive);
+    cursor: not-allowed;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background-color: rgba(230, 224, 224, 0.85);
+    border-top: 1px solid rgba(187, 183, 183, 0.85);
+    padding: 1.5rem 0;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (min-width: 640px) {
+    .header-title {
+        font-size: 1.875rem;
+    }
     
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hide-mobile {
+        display: inline;
+    }
 }
 
-.hero-badge{
-    display:inline-block;
-    padding:6px 14px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.15);
-    margin-bottom:20px;
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
 }
 
-.hero h2{
-    font-size:48px;
-    margin-bottom:20px;
-}
-
-.hero h2 span{
-    color:#fc3d53;
-}
-
-.hero p{
-    max-width:600px;
-    margin:auto;
-    margin-bottom:40px;
-}
-
-/* CARDS */
-
-.cards-row{
-    display:flex;
-    justify-content:center;
-    gap:24px;
-    flex-wrap:wrap;
-}
-
-.card{
-    background:white;
-    color:black;
-    width:280px;
-    padding:30px;
-    border-radius:6px;
-}
-
-.card-icon{
-    width:60px;
-    height:60px;
-    margin:auto;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-size:24px;
-}
-
-.card-icon img{
-    width:48px;
-    height:48px;
-    object-fit:contain;
-}
-
-.card-icon.navy{
-    background:#444;
-}
-
-.card-icon.blue{
-    background:#0038A8;
-}
-
-.card-icon.red{
-    background:#CE1126;
-}
-
-.card h3{
-    margin:20px 0 10px;
-}
-
-.card p{
-    color:gray;
-    margin-bottom:20px;
-}
-
-.card-btn{
-    width:100%;
-    border:none;
-    padding:12px;
-    border-radius:8px;
-    cursor:pointer;
-    color:white;
-}
-
-.primary{
-    background:#666;
-}
-
-.gold{
-    background:#0038A8;
-}
-
-.outline{
-    background:#CE1126;
+@media (max-width: 639px) {
+    .hide-mobile {
+        display: none;
+    }
 }
