@@ -162,6 +162,7 @@ table input{
             <input type="radio"
                    name="completion"
                    id="graduated"
+                   value="graduated"
                    checked>
             Graduated
         </label>
@@ -169,7 +170,8 @@ table input{
         <label>
             <input type="radio"
                    name="completion"
-                   id="notGraduated">
+                   id="notGraduated"
+                   value="not-graduated">
             Not Graduated
         </label>
 
@@ -177,26 +179,23 @@ table input{
 </div>
 
 <div id="graduatedSection">
-
     <div class="form-group">
         <label>Graduation Date</label>
         <input type="date" id="graduationDate">
-    </div>
+    
 
-    <div class="form-group">
         <label>Honors Received</label>
         <input type="text" id="honorsReceived">
     </div>
-
 </div>
 
 <div id="notGraduatedSection" class="hidden">
-
     <div class="form-group">
         <label>Highest Year / Level / Units Earned</label>
-        <input type="text" id="highestUnits">
+        <input 
+        type="text" 
+        id="highestUnits">
     </div>
-
 </div>
 
 <div class="form-group">

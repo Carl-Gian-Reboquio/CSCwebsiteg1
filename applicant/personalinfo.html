@@ -147,11 +147,8 @@
     class="form-group"
     id="pregnantSection"
     style="display:none;">
-
-    <label>Are you pregnant?</label>
-
+        <label>Are you pregnant?</label>
         <div class="radio-group">
-
             <label>
                 <input
                     type="radio"
@@ -159,7 +156,6 @@
                     value="Yes">
                 Yes
             </label>
-
             <label>
                 <input
                     type="radio"
@@ -168,9 +164,7 @@
                     checked>
                 No
             </label>
-
         </div>
-
     </div>
 
     <div class="form-group">
@@ -251,73 +245,65 @@
     </div>
 
     <div class="form-group">
-    <label>PWD Type</label>
-
-    <div id="pwdSection" style="opacity:.5; pointer-events:none;">
-
-        <label>
-            <input type="checkbox" class="pwd-checkbox" value="Orthopedic Disability">
-            Orthopedic Disability
-        </label>
-
-        <label>
-            <input type="checkbox" class="pwd-checkbox" value="Visual Disability">
-            Visual Disability
-        </label>
-
-        <label>
-            <input type="checkbox" class="pwd-checkbox" value="Hearing Disability">
-            Hearing Disability
-        </label>
-
-        <label>
-            <input type="checkbox" class="pwd-checkbox" value="Speech Impairment">
-            Speech Impairment
-        </label>
-
-
-
-        <div id="otherPwdContainer">
-
-            <label>Other Disability Type</label>
-
-            <input
-                type="text"
-                class="otherPwd"
-                placeholder="Specify disability">
-
+        <label>PWD Type</label>
+        <div id="pwdSection" style="opacity:.5; pointer-events:none;">
+            <label>
+                <input 
+                type="checkbox" 
+                class="pwd-checkbox" 
+                value="Orthopedic Disability">
+                Orthopedic Disability
+            </label>
+            <label>
+                <input type="checkbox" class="pwd-checkbox" value="Visual Disability">
+                Visual Disability
+            </label>
+            <label>
+                <input type="checkbox" class="pwd-checkbox" value="Hearing Disability">
+                Hearing Disability
+            </label>
+            <label>
+                <input type="checkbox" class="pwd-checkbox" value="Speech Impairment">
+                Speech Impairment
+            </label>
+            <div id="otherPwdContainer">
+                <label>Other Disability Type</label>
+                <input
+                    type="text"
+                    class="otherPwd"
+                    placeholder="Specify disability">
+            </div>
+            <br>
+            <button
+                type="button"
+                id="addOtherPwd"
+                style="
+                    background:#0038A8;
+                    color:white;
+                    border:none;
+                    padding:8px 14px;
+                    border-radius:6px;
+                    cursor:pointer;">
+                    + Add Another Other Type
+            </button>
         </div>
-
-        <br>
-
-        <button
-            type="button"
-            id="addOtherPwd"
-            style="
-                background:#0038A8;
-                color:white;
-                border:none;
-                padding:8px 14px;
-                border-radius:6px;
-                cursor:pointer;">
-            + Add Another Other Type
-        </button>
-
     </div>
-
-    </div>
-
     <div class="form-group">
         <label>Senior Citizen?</label>
-
         <div class="radio-group">
             <label>
-                <input type="radio" name="senior" value="yes">
+                <input 
+                type="radio" 
+                name="senior" 
+                value="yes">
                 Yes
             </label>
-
             <label>
-                <input type="radio" name="senior" value="no" checked>
+                <input 
+                type="radio" 
+                name="senior" 
+                value="no" 
+                checked>
                 No
             </label>
         </div>
@@ -384,21 +370,15 @@ const sex = document.getElementById("sex");
 const pregnantSection = document.getElementById("pregnantSection");
 
 sex.addEventListener("change", () => {
-
     if(sex.value === "Female"){
-
         pregnantSection.style.display = "block";
-
     }else{
-
         pregnantSection.style.display = "none";
 
         document.querySelector(
             'input[name="pregnant"][value="No"]'
         ).checked = true;
-
     }
-
 });
 
 const pwdYes =
@@ -449,8 +429,12 @@ const otherPwdContainer =
 
 addOtherPwd.addEventListener("click", () => {
 
-    const input =
-        document.createElement("input");
+    const inputWrapper =
+        document.createElement("div");
+    inputWrapper.style.marginTop = "0.75rem";
+    inputWrapper.style.marginBottom = "0.75rem";
+
+    const input = document.createElement("input");
 
     input.type = "text";
     input.className = "otherPwd";
