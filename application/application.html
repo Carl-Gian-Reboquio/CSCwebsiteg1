@@ -227,6 +227,17 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <label class="form-label"
+                >Mother's Maiden Full Name <span class="required">*</span></label>
+              <input
+                type="text"
+                class="form-input"
+                id="mothersMaidenName"
+                required
+              />
+            </div>
+
             <div
               style="
                 display: grid;
@@ -259,7 +270,7 @@
                 <label class="form-label"
                   >Age <span class="required">*</span></label
                 >
-                <input type="number" class="form-input" id="age" required />
+                <input type="number" class="form-input" id="age" readonly />
               </div>
             </div>
 
@@ -679,7 +690,7 @@
                 <input
                   type="number"
                   class="form-input"
-                  id="courseDegree"
+                  id="inclusiveYearFrom"
                   required
                 />
               </div>
@@ -688,7 +699,9 @@
                 <input 
                 type="number" 
                 class="form-input" 
-                id="major" />
+                id="inclusiveYearTo"
+                required
+                />
               </div>
             </div>
 
@@ -785,10 +798,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><input type="text" class="form-input"></td>
-                    <td><input type="text" class="form-input"></td>
-                    <td><input type="date" class="form-input"></td>
-                    <td><input type="text" class="form-input"></td>
+                    <td><input type="text" class="form-input exam-title"></td>
+                    <td><input type="text" class="form-input exam-rating"></td>
+                    <td><input type="date" class="form-input exam-date"></td>
+                    <td><input type="text" class="form-input exam-place"></td>
                     <td>
                       <button 
                       type="button"

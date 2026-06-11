@@ -453,6 +453,23 @@ firstNo.addEventListener("change", () => {
 });
 
 /* ---------------------------
+   Age Update Based on Birth Date
+---------------------------- */
+const dateOfBirth = document.getElementById("dateOfBirth");
+const age = document.getElementById("age");
+
+dateOfBirth.addEventListener("change", () => {
+  const dob = new Date(dateOfBirth.value);
+  const today = new Date();
+  let years = today.getFullYear() - dob.getFullYear();
+  const monthDiff = today.getMonth() - dob.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+    years--;
+  }
+  age.value = years;
+});
+
+/* ---------------------------
    PWD → Show/Hide Disability Section
 ---------------------------- */
 const pwdYes = document.getElementById("pwdYes");
@@ -486,17 +503,14 @@ const addOtherPwd = document.getElementById("addOtherPwd");
 const otherPwdContainer = document.getElementById("otherPwdContainer");
 
 addOtherPwd.addEventListener("click", () => {
-  const inputWrapper = document.createElement("div");
-  inputWrapper.style.marginTop = "0.75rem";
-  inputWrapper.style.marginBottom = "0.75rem";
-
   const input = document.createElement("input");
+
   input.type = "text";
   input.className = "form-input otherPwd";
   input.placeholder = "Specify disability";
+  input.style.marginTop = "0.75rem";
 
-  inputWrapper.appendChild(input);
-  otherPwdContainer.appendChild(inputWrapper);
+  otherPwdContainer.appendChild(input);
 });
 
 // Pregnant Section
@@ -542,10 +556,10 @@ function addExamRow() {
   const table = document.querySelector("#examTable tbody");
   const row = document.createElement("tr");
   row.innerHTML = `
-        <td><input type="text" class="form-input"></td>
-        <td><input type="text" class="form-input"></td>
-        <td><input type="date" class="form-input"></td>
-        <td><input type="text" class="form-input"></td>
+        <td><input type="text" class="form-input exam-title"></td>
+        <td><input type="text" class="form-input exam-rating"></td>
+        <td><input type="date" class="form-input exam-date"></td>
+        <td><input type="text" class="form-input exam-place"></td>
         <td>
             <button type="button"
                     class="remove-btn"
@@ -605,11 +619,13 @@ function submitApplication() {
     firstTimeTaker: document.querySelector(
       'input[name="firstTimeTaker"]:checked',
     )?.value,
+    dateofLastExam: document.getElementById("dateofLastExam").value,
 
     // Step 2
     lastName: document.getElementById("lastName").value,
     firstName: document.getElementById("firstName").value,
     middleName: document.getElementById("middleName").value,
+    mothersMaidenName: document.getElementById("mothersMaidenName").value,
     suffix: document.getElementById("suffix").value,
     sex: document.getElementById("sex").value,
     dateOfBirth: document.getElementById("dateOfBirth").value,
@@ -620,17 +636,52 @@ function submitApplication() {
     mobileNumber: document.getElementById("mobileNumber").value,
     permanentAddress: document.getElementById("permanentAddress").value,
     zipCode: document.getElementById("zipCode").value,
+    isPWD: document.querySelector('input[name="pwd"]:checked')?.value,
+    disabilities: [
+      ...Array.from(document.querySelectorAll(".pwd-checkbox:checked")).map(
+        (cb) => cb.value,
+      ),
+
+      ...Array.from(document.querySelectorAll(".otherPwd"))
+        .map((input) => input.value.trim())
+        .filter((value) => value !== ""),
+    ],
+    isPregnant: document.querySelector('input[name="pregnant"]:checked')?.value,
+    isSeniorCitizen: document.querySelector(
+      'input[name="seniorCitizen"]:checked',
+    )?.value,
 
     // Step 3
     highestEducation: document.getElementById("highestEducation").value,
     completionStatus: document.querySelector(
       'input[name="completionStatus"]:checked',
     )?.value,
+    graduationDate: document.getElementById("graduationDate").value,
+    honorsReceived: document.getElementById("honorsReceived").value,
+    highestUnits: document.getElementById("highestUnits").value,
     courseDegree: document.getElementById("courseDegree").value,
     major: document.getElementById("major").value,
     schoolName: document.getElementById("schoolName").value,
     schoolAddress: document.getElementById("schoolAddress").value,
+    inclusiveYearFrom: document.getElementById("inclusiveYearFrom").value,
+    inclusiveYearTo: document.getElementById("inclusiveYearTo").value,
+    // Employment Section
     employmentSector: document.getElementById("employmentSector").value,
+    agencyOffice: document.getElementById("agencyOffice").value,
+    agencyAddress: document.getElementById("agencyOfficeAddress").value,
+    positionTitle: document.getElementById("positionJobTitle").value,
+    yearsInPosition: document.getElementById("yearsInPosition").value,
+    employmentStatus: document.querySelector(
+      'input[name="employmentStatus"]:checked',
+    )?.value,
+    examinations: Array.from(
+      document.querySelectorAll("#examTable tbody tr"),
+    ).map((row) => ({
+      title: row.querySelector(".exam-title").value,
+      rating: row.querySelector(".exam-rating").value,
+      dateGranted: row.querySelector(".exam-date").value,
+      placeOfExamination: row.querySelector(".exam-place").value,
+    })),
   };
 
 
