@@ -1,9 +1,12 @@
 ## Setting Up and Installation
 
+- You need to have Node.js first
+
 - Go to backend directory and run this in the terminal
 
 ```bash
 npm install
+npm install mysql2
 ```
 
 - Open MySQL and create Database
