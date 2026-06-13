@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+        />
+        <title>Application Submitted</title>
+    </head>
+    <body>
+        <div class="success-container">
+            <div class="success-icon">✔</div>
+            <h1>Application Submitted Successfully</h1>
+            <p>Your Civil Service Examination application has been successfully recorded.</p>
+            <div class="info-box">
+                <div class="info-row">
+                    <div class="label">Application Number</div>
+                    <div class="value" id="applicationNumber"></div>
+                </div>
+                <div class="info-row">
+                    <div class="label">Assigned Examination Date</div>
+                    <div class="value" id="examDate"></div>
+                </div>
+                <div class="info-row">
+                    <div class="label">Registered Email Address</div>
+                    <div class="value" id="emailAddress"></div>
+                </div>
+            </div>
+            <button
+                class="btn-home"
+                onclick="window.location.href='../index.html'">
+                Return to Home
+            </button>
+        </div>
+    </body>
+    <script src="successPage.js"></script>
+</html>

@@ -650,7 +650,7 @@ function submitApplication() {
     isPregnant: document.querySelector(
       'input[name="pregnant"]:checked')?.value,
     isSeniorCitizen: document.querySelector(
-      'input[name="seniorCitizen"]:checked',
+      'input[name="senior"]:checked',
     )?.value,
 
     // Step 3

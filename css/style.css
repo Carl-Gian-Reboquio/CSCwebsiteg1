@@ -698,6 +698,112 @@ a {
     background-color: #fef2f2;
 }
 
+/* ========================================
+   SUCCESS PAGE
+   ======================================== */
+
+.success-container {
+  max-width: 750px;
+  width: 100%;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--color-primary);
+}
+
+.success-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.success-container h1 {
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+.success-container p {
+  color: var(--color-muted-foreground);
+  margin-bottom: 2rem;
+}
+
+.info-box {
+  background: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row .label {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.info-row .value {
+  font-weight: 500;
+  color: var(--color-foreground);
+  text-align: right;
+  background: transparent;
+  border: none;
+  padding: 0;
+  min-height: auto;
+}
+
+.btn-home {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-home:hover {
+  background: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+
 @media (max-width: 768px) {
   .review-content {
     padding: 1.5rem;
@@ -713,6 +819,23 @@ a {
 
   .btn {
     width: 100%;
+  }
+  .success-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-row .value {
+    text-align: left;
+  }
+
+  .success-container h1 {
+    font-size: 1.5rem;
   }
 }
 

@@ -159,9 +159,18 @@ createAccountBtn.addEventListener("click", async () => {
     const result = await response.json();
     console.log(result);
     if (result.success) {
+      localStorage.setItem(
+        "successData",
+        JSON.stringify({
+          applicationNo: data.applicationNo,
+          examDate: data.dateOfExamination,
+          email: data.email,
+        }),
+      );
+
       localStorage.removeItem("applicationData");
 
-      window.location.href = `successPage.html?appNo=${data.applicationNo}`;
+      window.location.href = "successPage.html";
     } else {
       showError("email", "emailError", result.message || "Submission failed.");
     }

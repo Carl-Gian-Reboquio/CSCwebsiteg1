@@ -70,60 +70,29 @@ h1{
 </head>
 
 <body>
-
-<div class="success-container">
-
-    <div class="success-icon">✔</div>
-
-    <h1>Application Submitted Successfully</h1>
-
-    <p>
-        Your Civil Service Examination application
-        has been successfully recorded.
-    </p>
-
-    <div class="info-box">
-
-        <div class="info-row">
-            <div class="label">Application Number</div>
-            <div class="value" id="applicationNumber"></div>
+    <div class="success-container">
+        <div class="success-icon">✔</div>
+        <h1>Application Submitted Successfully</h1>
+        <p>Your Civil Service Examination application has been successfully recorded.</p>
+        <div class="info-box">
+            <div class="info-row">
+                <div class="label">Application Number</div>
+                <div class="value" id="applicationNumber"></div>
+            </div>
+            <div class="info-row">
+                <div class="label">Assigned Examination Date</div>
+                <div class="value" id="examDate"></div>
+            </div>
+            <div class="info-row">
+                <div class="label">Registered Email Address</div>
+                <div class="value" id="emailAddress"></div>
+            </div>
         </div>
-
-        <div class="info-row">
-            <div class="label">Assigned Examination Date</div>
-            <div class="value" id="examDate"></div>
-        </div>
-
-        <div class="info-row">
-            <div class="label">Registered Email Address</div>
-            <div class="value" id="emailAddress"></div>
-        </div>
-
+        <button
+            class="btn-home"
+            onclick="window.location.href='../index.html'">
+            Return to Home
+        </button>
     </div>
-
-    <button
-        class="btn-home"
-        onclick="window.location.href='../index.html'">
-        Return to Home
-    </button>
-
-</div>
-
-<script>
-
-document.getElementById("applicationNumber")
-.textContent =
-localStorage.getItem("application_number");
-
-document.getElementById("examDate")
-.textContent =
-localStorage.getItem("exam_date");
-
-document.getElementById("emailAddress")
-.textContent =
-localStorage.getItem("account_email");
-
-</script>
-
 </body>
 </html>
