@@ -189,8 +189,7 @@ const sequence =
 
 const year = new Date().getFullYear();
 
-const applicationNumber =
-    `${year}-${region}-CSE-${sequence}`;
+const applicationNumber = `${year}-${region}-CSE-${sequence}`;
 
 localStorage.setItem(
     "application_number",

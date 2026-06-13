@@ -556,6 +556,165 @@ a {
   opacity: 0.5;
   cursor: not-allowed;
 }
+/* ========================================
+   Review page styles
+   ======================================== */
+.review-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  
+}
+
+.review-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #1e40af;
+  border-radius: 18px 18px 0 0;
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.12),
+    0 2px 10px rgba(0,0,0,.08);
+}
+
+.review-content h2 {
+  color: #1e40af;
+  margin-bottom: .5rem;
+}
+
+.review-content h3 {
+  color: #1e40af;
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: .5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.value {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-muted);
+  min-height: 40px;
+}
+
+.review-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+#reviewExamTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#reviewExamTable thead {
+  background: #1e40af;
+  color: white;
+}
+
+#reviewExamTable th,
+#reviewExamTable td {
+  padding: 12px;
+
+  border: 1px solid #dbeafe;
+
+  text-align: left;
+}
+
+#reviewExamTable tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+#reviewExamTable tbody tr:hover {
+  background: #eff6ff;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-confirm,
+.btn-create {
+  background: #1e40af;
+  color: white;
+}
+
+.btn-confirm:hover,
+.btn-create:hover {
+  background: #1d4ed8;
+}
+
+.account-section {
+  margin-top: 2rem;
+
+  padding-top: 2rem;
+
+  border-top: 2px solid #dbeafe;
+}
+
+.account-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.error-message {
+    display: block;
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+.input-error {
+    border: 2px solid #dc2626 !important;
+    background-color: #fef2f2;
+}
+
+@media (max-width: 768px) {
+  .review-content {
+    padding: 1.5rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
 
 /* ========================================
    STEP INDICATOR
