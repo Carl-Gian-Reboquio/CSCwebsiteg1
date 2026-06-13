@@ -313,6 +313,88 @@ a {
   cursor: not-allowed;
 }
 /* ========================================
+   LOGIN PAGE
+   ======================================== */
+
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--color-primary);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.login-header p {
+  color: var(--color-muted-foreground);
+  font-size: 0.95rem;
+}
+
+.btn-login {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  padding: 0.85rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-login:hover {
+  background: var(--color-accent);
+}
+
+.login-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-footer p {
+  color: var(--color-muted-foreground);
+}
+
+.login-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
    EXAMINATION TABLE
    ======================================== */
 
