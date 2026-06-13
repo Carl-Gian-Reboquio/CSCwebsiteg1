@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Civil Service Examination</title>
+    <link rel="icon" href="../images/csclogo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-with-logo">
+                    <img src="../images/csc.svg" alt="CSC Logo" class="header-logo" />
+                    <div>
+                        <h1 class="header-title">Civil Service Examination</h1>
+                        <p class="header-subtitle">Online Application Portal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="dashboard-container">
+
+            <div class="dashboard-header">
+            <h2>Applicant Dashboard</h2>
+            <p>View your application details and account information.</p>
+            </div>
+
+            <!-- Applicant Information -->
+            <div class="dashboard-card">
+            <h3>Applicant Information</h3>
+
+            <div class="info-grid">
+                <div class="label">Full Name</div>
+                <div class="value" id="fullName">Loading...</div>
+
+                <div class="label">Email Address</div>
+                <div class="value" id="email">Loading...</div>
+            </div>
+            </div>
+
+            <!-- Application Information -->
+            <div class="dashboard-card">
+            <h3>Application Information</h3>
+
+            <div class="info-grid">
+                <div class="label">Application Number</div>
+                <div class="value" id="applicationNo">Loading...</div>
+
+                <div class="label">Examination Type</div>
+                <div class="value" id="examType">Loading...</div>
+
+                <div class="label">Examination Date</div>
+                <div class="value" id="examDate">Loading...</div>
+
+                <div class="label">Place of Examination</div>
+                <div class="value" id="examPlace">Loading...</div>
+            </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="dashboard-card">
+            <h3>Account Actions</h3>
+
+            <div class="dashboard-actions">
+                <button class="btn btn-primary" id="viewApplicationBtn">
+                View Full Application
+                </button>
+
+                <button class="btn btn-secondary" id="logoutBtn">
+                Logout
+                </button>
+            </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+<script src="dashboard.js"></script>

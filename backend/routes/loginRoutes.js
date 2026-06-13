@@ -1,3 +1,7 @@
+const express = require("express");
+const router = express.Router();
+const pool = require("../db/connection");
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -39,3 +43,5 @@ router.post("/login", async (req, res) => {
     });
   }
 });
+
+module.exports = router;

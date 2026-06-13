@@ -606,7 +606,7 @@
               "
             >
               <div class="form-group">
-                <label class="form-label">Graduation Date</label>
+                <label class="form-label">Graduation Date <span class="required">*</span></label>
                 <input
                   type="date"
                   class="form-input"
@@ -629,7 +629,7 @@
       
             <div id="notGraduatedSection"">
               <div class="form-group">
-                <label class="form-label" >Highest Year / Level / Units Earned</label>
+                <label class="form-label" >Highest Year / Level / Units Earned <span class="required">*</span></label>
                 <input
                   class="form-input" 
                   type="text" 
@@ -740,53 +740,53 @@
                 <option value="Unemployed">Unemployed</option>
               </select>
             </div>
+            <div id="employmentDetails">
+              <div class="form-group">
+                <label class="form-label"
+                  >Agency/Office<span class="required">*</span></label
+                >
+                <input type="text" class="form-input" id="agencyOffice" required />
+              </div>
 
-            <div class="form-group">
-              <label class="form-label"
-                >Agency/Office<span class="required">*</span></label
-              >
-              <input type="text" class="form-input" id="agencyOffice" required />
+              <div class="form-group">
+                <label class="form-label"
+                  >Agency/Office Address <span class="required">*</span></label
+                >
+                <textarea
+                  class="form-textarea"
+                  id="agencyOfficeAddress"
+                  rows="2"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Position/Job Title<span class="required">*</span></label
+                >
+                <input type="text" class="form-input" id="positionJobTitle" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >No. of Years in Position<span class="required">*</span></label
+                >
+                <input type="number" class="form-input" id="yearsInPosition" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Status of Employment <span class="required">*</span></label>
+                <select class="form-select" id="employmentStatus">
+                  <option value="">Select</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Temporary">Temporary</option>
+                  <option value="Contractual">Contractual</option>
+                  <option value="Casual">Casual</option>
+                  <option value="Job Order">Job Order</option>
+                  <option value="Coterminous">Coterminous</option>
+                </select>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label class="form-label"
-                >Agency/Office Address <span class="required">*</span></label
-              >
-              <textarea
-                class="form-textarea"
-                id="agencyOfficeAddress"
-                rows="2"
-                required
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label"
-                >Position/Job Title<span class="required">*</span></label
-              >
-              <input type="text" class="form-input" id="positionJobTitle" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label"
-                >No. of Years in Position<span class="required">*</span></label
-              >
-              <input type="number" class="form-input" id="yearsInPosition" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Status of Employment</label>
-              <select class="form-select" id="employmentStatus">
-                <option value="">Select</option>
-                <option value="Permanent">Permanent</option>
-                <option value="Temporary">Temporary</option>
-                <option value="Contractual">Contractual</option>
-                <option value="Casual">Casual</option>
-                <option value="Job Order">Job Order</option>
-                <option value="Coterminous">Coterminous</option>
-              </select>
-            </div>
-
             <h3
               style="
                 color: var(--color-primary);

@@ -552,6 +552,27 @@ notGraduated.addEventListener("change", () => {
   notGraduatedSection.style.display = "block";
 });
 
+const employmentSector = document.getElementById("employmentSector");
+const employmentDetails = document.getElementById("employmentDetails");
+
+const employmentFields = employmentDetails.querySelectorAll(
+  "input, select, textarea",
+);
+
+employmentSector.addEventListener("change", () => {
+  const isUnemployed = employmentSector.value === "Unemployed";
+
+  employmentFields.forEach((field) => {
+    field.disabled = isUnemployed;
+
+    if (isUnemployed) {
+      field.value = "";
+    }
+  });
+
+  employmentDetails.style.opacity = isUnemployed ? "0.5" : "1";
+});
+
 function addExamRow() {
   const table = document.querySelector("#examTable tbody");
   const row = document.createElement("tr");

@@ -5,6 +5,7 @@ const pool = mysql.createPool({
   user: "root",
   password: "", // Update with your MySQL password
   database: "civil_service_db",
+  dateStrings: true,
   waitForConnections: true,
   connectionLimit: 10,
 });

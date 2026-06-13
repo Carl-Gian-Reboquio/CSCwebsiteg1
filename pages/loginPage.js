@@ -22,7 +22,7 @@ loginForm.addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.success) {
-      localStorage.setItem("loggedInUser", JSON.stringify(result.account));
+      localStorage.setItem("currentUser", JSON.stringify(result.account));
 
       window.location.href = "dashboard.html";
     } else {
@@ -31,6 +31,5 @@ loginForm.addEventListener("submit", async (e) => {
   } catch (error) {
     console.error(error);
 
-    alert("Unable to connect to server.");
   }
 });

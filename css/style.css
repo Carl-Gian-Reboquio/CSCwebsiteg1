@@ -395,6 +395,56 @@ a {
 }
 
 /* ========================================
+   DASHBOARD
+   ======================================== */
+
+.dashboard-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: var(--color-muted-foreground);
+}
+
+.dashboard-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-card h3 {
+  color: var(--color-primary);
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-actions .btn {
+  flex: 1;
+}
+
+/* ========================================
    EXAMINATION TABLE
    ======================================== */
 
@@ -1037,6 +1087,7 @@ a {
   .hide-mobile {
     display: inline;
   }
+  
 }
 
 @media (min-width: 768px) {
