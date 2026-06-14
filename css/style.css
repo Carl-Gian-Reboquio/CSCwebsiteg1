@@ -1116,6 +1116,20 @@ a {
 .hidden {
   display: none;
 }
+
+.section-actions {
+  display: flex;
+  gap: .5rem;
+}
+
+.cancel-btn {
+  background: #64748b;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #475569;
+}
 /* ========================================
    DELETE APPLICATION
    ======================================== */

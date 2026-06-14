@@ -24,6 +24,5 @@ app.use((req, res, next) => {
 
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
-  console.log("Update routes registered at /api/dashboard/update");
 });
 

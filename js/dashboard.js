@@ -1,5 +1,5 @@
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
+let applicantData = {};
 if (!currentUser) {
   window.location.href = "loginPage.html";
 }
@@ -21,6 +21,7 @@ async function loadDashboard() {
     }
 
     const data = result.data;
+    applicantData = data;
     // Modal Part
     document.getElementById("modalApplicationNo").textContent = data.Application_No;
     document.getElementById("modalExamType").textContent = data.Examination_Applied_For;
@@ -104,6 +105,12 @@ function setButtonLoading(btn, isLoading) {
   btn.disabled = isLoading;
   btn.textContent = isLoading ? "Saving..." : "Update";
 }
+// Cancel button
+document.querySelectorAll(".cancel-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.reload();
+  });
+});
 
 // Update Personal Information
 document.getElementById("updatePersonalBtn").addEventListener("click", async function () {
@@ -113,12 +120,14 @@ document.getElementById("updatePersonalBtn").addEventListener("click", async fun
   if (btn.dataset.editing !== "true") {
     btn.dataset.editing = "true";
     btn.textContent = "Save";
+    //Cancel Button show
+    const cancelBtn = btn.nextElementSibling;
+    cancelBtn.classList.remove("hidden");
 
     // Split Full Name back into First/Last for editing
     const fullNameEl = document.getElementById("modalFullName");
-    const fullNameParts = fullNameEl.textContent.trim().split(" ");
-    const firstName = fullNameParts[0] || "";
-    const lastName = fullNameParts.slice(1).join(" ") || "";
+    const firstName = applicantData.First_Name || "";
+    const lastName = applicantData.Last_Name || "";
 
     // Replace Full Name display with a wrapper div containing two inputs (stays in one grid cell)
     const nameWrapper = document.createElement("div");
@@ -141,7 +150,7 @@ document.getElementById("updatePersonalBtn").addEventListener("click", async fun
     lastInput.id = "editLastName";
     lastInput.placeholder = "Last Name";
     lastInput.style.flex = "1";
-
+    
     nameWrapper.appendChild(firstInput);
     nameWrapper.appendChild(lastInput);
     fullNameEl.replaceWith(nameWrapper);
@@ -209,6 +218,8 @@ document.getElementById("updatePersonalBtn").addEventListener("click", async fun
     btn.dataset.editing = "false";
     btn.textContent = "Update";
     btn.disabled = false;
+    const cancelBtn = btn.nextElementSibling;
+    cancelBtn.classList.add("hidden");
   } catch (error) {
     console.error(error);
     alert("An error occurred while updating personal information.");
@@ -223,6 +234,9 @@ document.getElementById("updateEducationBtn").addEventListener("click", async fu
   if (btn.dataset.editing !== "true") {
     btn.dataset.editing = "true";
     btn.textContent = "Save";
+    //Cancel Button show
+    const cancelBtn = btn.nextElementSibling;
+    cancelBtn.classList.remove("hidden");
 
     makeEditable("modalSchoolName");
     makeEditable("modalCourse");
@@ -272,6 +286,8 @@ document.getElementById("updateEducationBtn").addEventListener("click", async fu
     btn.dataset.editing = "false";
     btn.textContent = "Update";
     btn.disabled = false;
+    const cancelBtn = btn.nextElementSibling;
+    cancelBtn.classList.add("hidden");
   } catch (error) {
     console.error(error);
     alert("An error occurred while updating education information.");
@@ -286,7 +302,9 @@ document.getElementById("updateEmploymentBtn").addEventListener("click", async f
   if (btn.dataset.editing !== "true") {
     btn.dataset.editing = "true";
     btn.textContent = "Save";
-
+    // Cancel Button Show
+    const cancelBtn = btn.nextElementSibling;
+    cancelBtn.classList.remove("hidden");
     makeEditable("modalEmploymentSector");
     makeEditable("modalAgency");
     makeEditable("modalPosition");
@@ -335,6 +353,8 @@ document.getElementById("updateEmploymentBtn").addEventListener("click", async f
     btn.dataset.editing = "false";
     btn.textContent = "Update";
     btn.disabled = false;
+    const cancelBtn = btn.nextElementSibling;
+    cancelBtn.classList.add("hidden");
   } catch (error) {
     console.error(error);
     alert("An error occurred while updating employment information.");

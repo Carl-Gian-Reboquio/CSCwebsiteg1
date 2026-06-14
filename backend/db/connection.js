@@ -3,7 +3,7 @@ const mysql = require("mysql2/promise");
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "thisistempPASSWORD", // Update with your MySQL password
+  password: "", // Update with your MySQL password
   database: "civil_service_db",
   dateStrings: true,
   waitForConnections: true,

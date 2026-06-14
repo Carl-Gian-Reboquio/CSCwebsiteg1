@@ -23,7 +23,7 @@ router.put("/personal/:personId", async (req, res) => {
       [First_Name, Last_Name, Birthdate, Sex, Citizenship, Permanent_Address, personId]
     );
 
-    if (result.affectedRows === 0) {
+    if (result.affectedRows === 0 && result.changedRows === 0) {
       return res.status(404).json({
         success: false,
         message: "Applicant not found",
@@ -63,7 +63,7 @@ router.put("/education/:personId", async (req, res) => {
       [School_Name, Course_Title, Major, Level_of_Education, personId]
     );
 
-    if (result.affectedRows === 0) {
+    if (result.affectedRows === 0 && result.changedRows === 0) {
       return res.status(404).json({
         success: false,
         message: "Applicant not found",
@@ -103,7 +103,7 @@ router.put("/employment/:personId", async (req, res) => {
       [Employment_Sector, Agency_Office, Job_Title, Employment_Status, personId]
     );
 
-    if (result.affectedRows === 0) {
+    if (result.affectedRows === 0 && result.changedRows === 0) {
       return res.status(404).json({
         success: false,
         message: "Application not found",
