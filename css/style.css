@@ -1116,6 +1116,20 @@ a {
 .hidden {
   display: none;
 }
+
+.section-actions {
+  display: flex;
+  gap: .5rem;
+}
+
+.cancel-btn {
+  background: #64748b;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #475569;
+}
 /* ========================================
    DELETE APPLICATION
    ======================================== */
@@ -1243,6 +1257,18 @@ a {
   cursor: pointer;
   font-size: 0.875rem;
   margin: 0;
+}
+.edit-input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-muted);
+  min-height: 40px;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
 }
 
 /* ========================================
