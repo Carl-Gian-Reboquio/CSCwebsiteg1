@@ -22,7 +22,7 @@ async function loadDashboard() {
 
     const data = result.data;
     // Modal Part
-    document.getElementById("modalApplicationNo").textContent =data.Application_No;
+    document.getElementById("modalApplicationNo").textContent = data.Application_No;
     document.getElementById("modalExamType").textContent = data.Examination_Applied_For;
     document.getElementById("modalExamDate").textContent = data.Date_of_Examination;
     document.getElementById("modalExamPlace").textContent = data.Place_of_Examination;

@@ -1116,6 +1116,57 @@ a {
 .hidden {
   display: none;
 }
+/* ========================================
+   DELETE APPLICATION
+   ======================================== */
+
+.danger-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 2px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius);
+  background-color: rgba(220, 38, 38, 0.04);
+}
+
+.danger-section h3 {
+  color: var(--color-destructive);
+  border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.danger-text {
+  color: #7f1d1d;
+  margin-bottom: 0.75rem;
+}
+
+.danger-list {
+  margin-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #7f1d1d;
+}
+
+.danger-list li {
+  margin-bottom: 0.4rem;
+}
+
+.btn-danger {
+  background-color: var(--color-destructive);
+  color: white;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+.btn-danger:active {
+  transform: scale(0.98);
+}
 
 /* ========================================
    BACK LINK
