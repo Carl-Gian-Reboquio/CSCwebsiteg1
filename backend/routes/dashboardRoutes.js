@@ -12,14 +12,27 @@ router.get("/:personId", async (req, res) => {
         ap.Person_ID,
         ap.First_Name,
         ap.Last_Name,
-
+        ap.Birthdate,
+        ap.Sex,
+        ap.Citizenship,
+        ap.Permanent_Address,
+        
+        ap.School_Name,
+        ap.Course_Title,
+        ap.Major,
+        ap.Level_of_Education,
         acc.Email_Address,
 
         app.Application_No,
         app.Examination_Applied_For,
         app.Date_of_Examination,
-        app.Place_of_Examination
+        app.Place_of_Examination,
 
+        app.Employment_Sector,
+        app.Agency_Office,
+        app.Job_Title,
+        app.Employment_Status
+        
       FROM applicant ap
 
       JOIN account acc

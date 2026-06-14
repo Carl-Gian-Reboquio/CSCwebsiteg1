@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--  Header  -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -24,59 +25,165 @@
             </div>
         </div>
     </header>
+
+    <!-- Full Application Modal -->
+    <div id="applicationModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Full Application Details</h2>
+                <button id="closeModalBtn" class="modal-close">&times;</button>
+            </div>
+
+            <!-- Examination Details -->
+            <div class="dashboard-card">
+                <div class="section-header">
+                    <h3>Examination Details</h3>
+                </div>
+
+                <div class="info-grid">
+                    <div class="label">Application Number</div>
+                    <div class="value" id="modalApplicationNo"></div>
+
+                    <div class="label">Examination Type</div>
+                    <div class="value" id="modalExamType"></div>
+
+                    <div class="label">Examination Date</div>
+                    <div class="value" id="modalExamDate"></div>
+
+                    <div class="label">Examination Place</div>
+                    <div class="value" id="modalExamPlace"></div>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="dashboard-card">
+                <div class="section-header">
+                    <h3>Personal Information</h3>
+                    <button class="btn btn-secondary update-btn">
+                        Update
+                    </button>
+                </div>
+
+                <div class="info-grid">
+                    <div class="label">Full Name</div>
+                    <div class="value" id="modalFullName"></div>
+
+                    <div class="label">Birthdate</div>
+                    <div class="value" id="modalBirthdate"></div>
+
+                    <div class="label">Sex</div>
+                    <div class="value" id="modalSex"></div>
+
+                    <div class="label">Citizenship</div>
+                    <div class="value" id="modalCitizenship"></div>
+
+                    <div class="label">Address</div>
+                    <div class="value" id="modalAddress"></div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="dashboard-card">
+                <div class="section-header">
+                    <h3>Education Information</h3>
+                    <button class="btn btn-secondary update-btn">
+                        Update
+                    </button>
+                </div>
+
+                <div class="info-grid">
+                    <div class="label">School Name</div>
+                    <div class="value" id="modalSchoolName"></div>
+
+                    <div class="label">Course</div>
+                    <div class="value" id="modalCourse"></div>
+
+                    <div class="label">Major</div>
+                    <div class="value" id="modalMajor"></div>
+
+                    <div class="label">Highest Education</div>
+                    <div class="value" id="modalEducation"></div>
+                </div>
+            </div>
+
+            <!-- Employment -->
+            <div class="dashboard-card">
+                <div class="section-header">
+                    <h3>Employment Information</h3>
+                    <button class="btn btn-secondary update-btn">
+                        Update
+                    </button>
+                </div>
+
+                <div class="info-grid">
+                    <div class="label">Employment Sector</div>
+                    <div class="value" id="modalEmploymentSector"></div>
+
+                    <div class="label">Agency Office</div>
+                    <div class="value" id="modalAgency"></div>
+
+                    <div class="label">Position</div>
+                    <div class="value" id="modalPosition"></div>
+
+                    <div class="label">Employment Status</div>
+                    <div class="value" id="modalEmploymentStatus"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <main class="main-content">
         <div class="dashboard-container">
-
             <div class="dashboard-header">
-            <h2>Applicant Dashboard</h2>
-            <p>View your application details and account information.</p>
+                <h2>Applicant Dashboard</h2>
+                <p>View your application details and account information.</p>
             </div>
 
             <!-- Applicant Information -->
             <div class="dashboard-card">
-            <h3>Applicant Information</h3>
+                <h3>Applicant Information</h3>
 
-            <div class="info-grid">
-                <div class="label">Full Name</div>
-                <div class="value" id="fullName">Loading...</div>
+                <div class="info-grid">
+                    <div class="label">Full Name</div>
+                    <div class="value" id="fullName">Loading...</div>
 
-                <div class="label">Email Address</div>
-                <div class="value" id="email">Loading...</div>
-            </div>
+                    <div class="label">Email Address</div>
+                    <div class="value" id="email">Loading...</div>
+                </div>
             </div>
 
             <!-- Application Information -->
             <div class="dashboard-card">
-            <h3>Application Information</h3>
+                <h3>Application Information</h3>
+                <div class="info-grid">
+                    <div class="label">Application Number</div>
+                    <div class="value" id="applicationNo">Loading...</div>
 
-            <div class="info-grid">
-                <div class="label">Application Number</div>
-                <div class="value" id="applicationNo">Loading...</div>
+                    <div class="label">Examination Type</div>
+                    <div class="value" id="examType">Loading...</div>
 
-                <div class="label">Examination Type</div>
-                <div class="value" id="examType">Loading...</div>
+                    <div class="label">Examination Date</div>
+                    <div class="value" id="examDate">Loading...</div>
 
-                <div class="label">Examination Date</div>
-                <div class="value" id="examDate">Loading...</div>
-
-                <div class="label">Place of Examination</div>
-                <div class="value" id="examPlace">Loading...</div>
-            </div>
+                    <div class="label">Place of Examination</div>
+                    <div class="value" id="examPlace">Loading...</div>
+                </div>
             </div>
 
             <!-- Actions -->
             <div class="dashboard-card">
-            <h3>Account Actions</h3>
+                <h3>Account Actions</h3>
 
-            <div class="dashboard-actions">
-                <button class="btn btn-primary" id="viewApplicationBtn">
-                View Full Application
-                </button>
+                <div class="dashboard-actions">
+                    <button class="btn btn-primary" id="viewApplicationBtn">
+                    View Full Application
+                    </button>
 
-                <button class="btn btn-secondary" id="logoutBtn">
-                Logout
-                </button>
-            </div>
+                    <button class="btn btn-secondary" id="logoutBtn">
+                    Logout
+                    </button>
+                </div>
             </div>
 
         </div>

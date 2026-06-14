@@ -1,9 +1,9 @@
 const data = JSON.parse(localStorage.getItem("applicationData"));
 
-//if (!data) {
-//  alert("No application data found.");
-//  window.location.href = "application.html";
-//}
+if (!data) {
+  alert("No application data found.");
+  window.location.href = "application.html";
+}
 
 Object.keys(data).forEach((key) => {
   const element = document.getElementById(key);
@@ -49,7 +49,6 @@ confirmBtn.addEventListener("click", () => {
   });
 });
 // Account Validation
-
 function showError(inputId, errorId, message) {
   document.getElementById(inputId).classList.add("input-error");
 

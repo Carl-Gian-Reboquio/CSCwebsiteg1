@@ -1052,6 +1052,72 @@ a {
 }
 
 /* ========================================
+   APPLICATION MODAL
+   ======================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  color: var(--color-primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--color-destructive);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+
+.update-btn {
+  width: auto;
+  padding: 0.5rem 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ========================================
    BACK LINK
    ======================================== */
 .back-link {
