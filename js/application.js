@@ -518,7 +518,7 @@ const sex = document.getElementById("sex");
 const pregnantSection = document.getElementById("pregnantSection");
 
 sex.addEventListener("change", () => {
-  if (sex.value === "female") {
+  if (sex.value === "Female") {
     pregnantSection.style.display = "block";
   } else {
     pregnantSection.style.display = "none";
