@@ -361,3 +361,39 @@ document.getElementById("updateEmploymentBtn").addEventListener("click", async f
     setButtonLoading(btn, false);
   }
 });
+
+// Delete Application Button
+document
+  .getElementById("deleteApplicationBtn")
+  .addEventListener("click", async () => {
+    const confirmed = confirm(
+      "This will permanently delete your account and application. Continue?",
+    );
+
+    if (!confirmed) return;
+
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/dashboard/delete/${currentUser.Person_ID}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      const result = await response.json();
+
+      if (!result.success) {
+        alert(result.message);
+        return;
+      }
+
+      alert("Application deleted successfully.");
+
+      localStorage.removeItem("currentUser");
+
+      window.location.href = "loginPage.html";
+    } catch (error) {
+      console.error(error);
+      alert("Error deleting application.");
+    }
+  });
