@@ -124,4 +124,26 @@ router.put("/employment/:personId", async (req, res) => {
   }
 });
 
+// Delete own application
+router.delete("/:personId", async (req, res) => {
+  const { personId } = req.params;
+
+  try {
+    await pool.query(`DELETE FROM application WHERE Person_ID = ?`, [personId]);
+    await pool.query(`DELETE FROM applicant WHERE Person_ID = ?`, [personId]);
+    await pool.query(`DELETE FROM account WHERE Person_ID = ?`, [personId]);
+
+    res.json({
+      success: true,
+      message: "Application deleted successfully",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
 module.exports = router;
