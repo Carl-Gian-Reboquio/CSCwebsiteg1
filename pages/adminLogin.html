@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Civil Service Examination</title>
+    <link rel="icon" href="../images/csclogo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-with-logo">
+                    <img src="../images/csc.svg" alt="CSC Logo" class="header-logo" />
+                    <div>
+                        <h1 class="header-title">Civil Service Examination</h1>
+                        <p class="header-subtitle">Admin Portal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h2>Admin Login</h2>
+                    <p>Sign in with your admin credentials to access the portal.</p>
+                </div>
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label class="form-label" for="username">
+                            Username
+                            <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            class="form-input"
+                            placeholder="Enter your username"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">
+                            Password
+                            <span class="required">*</span>
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-input"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+                    <p id="loginError" style="color: var(--color-destructive); font-size: 0.875rem; margin-bottom: 0.75rem; display: none;">
+                        Invalid username or password.
+                    </p>
+                    <button type="submit" class="btn-login">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const ADMIN_USERNAME = "reboquio";
+        const ADMIN_PASSWORD = "thisistempPASSWORD";
+
+        document.getElementById("adminLoginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const errorEl = document.getElementById("loginError");
+
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                sessionStorage.setItem("adminLoggedIn", "true");
+                window.location.href = "admin.html";
+            } else {
+                errorEl.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

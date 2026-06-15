@@ -374,7 +374,7 @@ document
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/dashboard/delete/${currentUser.Person_ID}`,
+        `http://localhost:3000/api/dashboard/update/${currentUser.Person_ID}`,
         {
           method: "DELETE",
         },

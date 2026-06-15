@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Civil Service Examination</title>
+    <link rel="icon" href="../images/csclogo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-with-logo">
+                    <img src="../images/csc.svg" alt="CSC Logo" class="header-logo" />
+                    <div>
+                        <h1 class="header-title">Civil Service Examination</h1>
+                        <p class="header-subtitle">Admin Portal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2>Expired Applications</h2>
+                <p>Applications where the examination date was more than 15 days ago.</p>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="section-header">
+                    <h3>Records Found: <span id="expiredCount">0</span></h3>
+                    <button class="btn btn-danger" id="deleteAllBtn" disabled>
+                        Delete All
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table id="examTable">
+                        <thead>
+                            <tr>
+                                <th>Application No.</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Exam Type</th>
+                                <th>Exam Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicantsTableBody">
+                            <tr>
+                                <td colspan="5" style="text-align:center; color: var(--color-text-muted); padding: 2rem;">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
